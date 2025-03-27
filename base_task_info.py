@@ -5,7 +5,7 @@ from typing import Optional, Any, Literal
 
 @dataclass
 class BaseTaskInfo:
-    """#### Базовый контейнер для сведений о выполняемой задачи
+    """#### Базовый контейнер для сведений о выполняемой задаче
     """
     id: UUID = uuid4()
     """идентификатор задачи

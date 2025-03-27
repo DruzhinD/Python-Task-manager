@@ -17,7 +17,7 @@ class BaseTask:
     def __eq__(self, value: Optional['BaseTask']):
         if value is None:
             return False
-        elif not isinstance(value, 'BaseTask'):
+        elif not isinstance(value, BaseTask):
             return False
         elif self.task_info.id == value.task_info.id:
             return True

@@ -12,5 +12,5 @@ class BaseTaskFilter():
         items = dict()
         for item in self.__dict__.items():
             if item[1] is not None:
-                items.update(item)
+                items[item[0]] = item[1]
         return items

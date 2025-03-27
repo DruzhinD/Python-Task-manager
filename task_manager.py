@@ -11,10 +11,10 @@ class TaskManager():
     """#### Менеджер задач
     Существует в единственном экземпляре
     """
-    _instance: 'TaskManager'
+    _instance: 'TaskManager' = None
 
     #реализация синглтона
-    def __new__(cls):
+    def __new__(cls, *args, **kwargs):
         if cls._instance is None:
             cls._instance = super().__new__(cls)
         return cls._instance
@@ -113,6 +113,6 @@ class TaskManager():
 
         filtered_tasks = [
             task for task in self.tasks
-            if all(getattr(task, key) == value for key, value in filter_dict.items())
+            if all(getattr(task.task_info, key) == value for key, value in filter_dict.items())
         ]
         return filtered_tasks
