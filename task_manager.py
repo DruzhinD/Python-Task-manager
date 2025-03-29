@@ -4,8 +4,8 @@ import datetime as dt
 from typing import List, Coroutine
 from uuid import UUID
 from base_task import BaseTask
-from base_task_info import BaseTaskInfo
-from base_task_filter import BaseTaskFilter
+from task_info.base_task_info import BaseTaskInfo
+from filters.base_task_filter import BaseTaskFilter
 
 class TaskManager():
     """#### Менеджер задач

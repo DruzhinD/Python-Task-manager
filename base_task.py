@@ -1,7 +1,7 @@
 from dataclasses import dataclass
 from asyncio import Task
 from typing import Optional
-from base_task_info import BaseTaskInfo
+from task_info.base_task_info import BaseTaskInfo
 
 @dataclass
 class BaseTask:
