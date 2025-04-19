@@ -3,22 +3,15 @@ import logging
 import datetime as dt
 from typing import List, Coroutine
 from uuid import UUID
+from singleton_metaclass import SingletonMetaclass
 from base_task import BaseTask
 from task_info.base_task_info import BaseTaskInfo
 from filters.base_task_filter import BaseTaskFilter
 
-class TaskManager():
+class TaskManager(metaclass=SingletonMetaclass):
     """#### Менеджер задач
     Существует в единственном экземпляре
     """
-    _instance: 'TaskManager' = None
-
-    #реализация синглтона
-    def __new__(cls, *args, **kwargs):
-        if cls._instance is None:
-            cls._instance = super().__new__(cls)
-        return cls._instance
-
     def __init__(self):
         self.tasks: List[BaseTask] = []
         """Активные задачи
